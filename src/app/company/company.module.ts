@@ -16,4 +16,8 @@ import { CompanyListComponent } from './company-list/company-list.component';
     CompanyRoutingModule
   ]
 })
-export class CompanyModule { }
+export class CompanyModule {
+  constructor() {
+    console.warn("Company Module Is Loaded...!");
+  }
+}

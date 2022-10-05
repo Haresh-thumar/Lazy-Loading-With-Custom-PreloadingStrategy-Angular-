@@ -7,9 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompanyListComponent implements OnInit {
 
-  constructor() { }
+  companys: any;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
+    this.companys = [
+      {
+        "code": "001",
+        "Name": "HCL"
+      },
+      {
+        "code": "002",
+        "Name": "TCS"
+      },
+      {
+        "code": "003",
+        "Name": "Nokia"
+      },
+    ];
+
+    console.log("----------- Company-List Component Load -----------");
   }
 
 }
