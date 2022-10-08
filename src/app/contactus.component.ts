@@ -11,10 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactusComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    console.warn("---- ContactUs Component Load ----");
+   }
 
   ngOnInit(): void {
-    console.log("----------- ContactUs Component Load -----------");
+    
   }
 
 }

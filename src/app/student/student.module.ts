@@ -16,4 +16,8 @@ import { StudentListComponent } from './student-list/student-list.component';
     StudentRoutingModule
   ]
 })
-export class StudentModule { }
+export class StudentModule {
+  constructor() {
+    console.warn("student Module Is Loaded...!");
+  }
+ }

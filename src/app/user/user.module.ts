@@ -16,4 +16,8 @@ import { UserListComponent } from './user-list/user-list.component';
     UserRoutingModule
   ]
 })
-export class UserModule { }
+export class UserModule { 
+  constructor() {
+    console.warn("User Module Is Loaded...!");
+  }
+}
