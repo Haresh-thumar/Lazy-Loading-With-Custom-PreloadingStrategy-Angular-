@@ -4,6 +4,7 @@ import { ContactusComponent } from './contactus.component';
 import { CustomOreloadingStrategyService } from './custom-oreloading-strategy.service';
 import { PageNotFoundComponent } from './pagenotfound.component';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -13,26 +14,22 @@ const routes: Routes = [
   {
     path: 'company',
     loadChildren: () => import('./company/company.module').then(mod => mod.CompanyModule),
-    // data: { preload: true, delay: false }
-    data: { preload: true, delay: true, time: 5000 }
+    data: { preload: true, delay: true, time: 3000 }
   },
   {
     path: 'person',
     loadChildren: () => import('./person/person.module').then(mod => mod.PersonModule),
-    // data: { preload: true, loadAfterSeconds: 5 }
-    data: { preload: true, delay: true, time: 5000 }
+    data: { preload: true, delay: true, time: 3000 }
   },
   {
     path: 'student',
     loadChildren: () => import('./student/student.module').then(mod => mod.StudentModule),
-    // data: { preload: true, loadAfterSeconds: 5 }
-    data: { preload: true, delay: true, time: 5000 }
+    data: { preload: true, delay: true, time: 3000 }
   },
   {
     path: 'user',
     loadChildren: () => import('./user/user.module').then(mod => mod.UserModule),
-    // data: { preload: true, loadAfterSeconds: 5 }
-    data: { preload: true, delay: true, time: 5000 }
+    data: { preload: true, delay: true, time: 3000 }
   },
   {
     path: 'contactus',
@@ -45,16 +42,19 @@ const routes: Routes = [
   },
 ];
 
+
+
 @NgModule({
   // imports: [RouterModule.forRoot(routes)],
-
   //-------- PreLoading Strategy (Load All Module) ---------
   imports: [RouterModule.forRoot(routes, {
     preloadingStrategy: CustomOreloadingStrategyService
   })],
   exports: [RouterModule],
   providers: [
-    CustomOreloadingStrategyService
+    CustomOreloadingStrategyService,
+    ContactusComponent,
+    PageNotFoundComponent
   ],
 })
 export class AppRoutingModule { }

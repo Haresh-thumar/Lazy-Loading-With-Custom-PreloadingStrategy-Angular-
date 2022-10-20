@@ -12,7 +12,7 @@ export class CustomOreloadingStrategyService implements PreloadingStrategy {
     if (route.data && route.data['preload']) {
       console.log('Preload Path is :' + route.path + ', delay' + route.data['delay']);
       if (route.data['delay']) {
-        return timer(5000).pipe(mergeMap(() => load()));
+        return timer(3000).pipe(mergeMap(() => load()));
       }
       return load();
     }
