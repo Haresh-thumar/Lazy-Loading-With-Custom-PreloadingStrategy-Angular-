@@ -6,7 +6,7 @@ import { mergeMap } from 'rxjs/operators';
 
 @Injectable()
 
-export class CustomOreloadingStrategyService implements PreloadingStrategy {
+export class CustompreloadingStrategyService implements PreloadingStrategy {
 
   preload(route: Route, load: () => Observable<any>): Observable<any> {
     if (route.data && route.data['preload']) {
